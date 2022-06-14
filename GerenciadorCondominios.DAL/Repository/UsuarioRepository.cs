@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using GerenciadorCondominios.BLL.Models;
 using GerenciadorCondominios.DAL.Interfaces;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace GerenciadorCondominios.DAL.Repository
@@ -70,6 +72,41 @@ namespace GerenciadorCondominios.DAL.Repository
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        public async Task<Usuario> PegarEmailUsuario(string email)
+        {
+            return await _userManager.FindByEmailAsync(email);
+        }
+
+        public async Task DeslogarUser()
+        {
+            await _signInManager.SignOutAsync();
+        }
+
+        public async Task AtualizarUsuario(Usuario usuario)
+        {
+            await _userManager.UpdateAsync(usuario);
+        }
+
+        public async Task<bool> VerificaSeUsuarioExisteEmFuncao(Usuario usuario, string funcao)
+        {
+            return await _userManager.IsInRoleAsync(usuario, funcao);
+        }
+
+        public  async Task<IEnumerable<string>> PegarFuncaoUsuario(Usuario usuario)
+        {
+            return await _userManager.GetRolesAsync(usuario);
+        }
+
+        public async Task<IdentityResult> RemoverFuncaoUsuario(Usuario usuario, IEnumerable<string> funcoes)
+        {
+            return await _userManager.RemoveFromRolesAsync(usuario, funcoes);
+        }
+
+        public async Task<IdentityResult> IncluirFuncaoUsuario(Usuario usuario, IEnumerable<string> funcoes)
+        {
+            return await _userManager.AddToRolesAsync(usuario, funcoes);
         }
     }
 }

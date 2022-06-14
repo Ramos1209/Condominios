@@ -1,4 +1,5 @@
 using GerenciadorCondominios.BLL.Models;
+using GerenciadorCondominios.Configuration;
 using GerenciadorCondominios.DAL;
 using GerenciadorCondominios.DAL.Interfaces;
 using GerenciadorCondominios.DAL.Repository;
@@ -25,10 +26,15 @@ namespace GerenciadorCondominios
             services.AddDbContext<CondominioContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Conection")));
 
             services.AddIdentity<Usuario, Funcao>().AddEntityFrameworkStores<CondominioContext>();
-            services.AddTransient<IUsuarioRepository, UsuarioRepository>();
+           
 
             services.AddAuthentication();
             services.AddAuthorization();
+
+            services.ConfigurarRepositorio();
+            services.ConfigurarCookie();
+            services.ConfigurarNomeUsuario();
+            services.ConfigurarSenhaUsuario();
 
             services.AddControllersWithViews();
         }

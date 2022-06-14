@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using GerenciadorCondominios.BLL.Models;
 using Microsoft.AspNetCore.Identity;
 
@@ -12,5 +13,17 @@ namespace GerenciadorCondominios.DAL.Interfaces
 
         Task IncluirUsuarioFuncao(Usuario usuario, string funcao);
 
+        Task<Usuario> PegarEmailUsuario(string email);
+
+        Task DeslogarUser();
+        Task AtualizarUsuario(Usuario usuario);
+
+        Task<bool> VerificaSeUsuarioExisteEmFuncao(Usuario usuario, string funcao);
+
+        Task<IEnumerable<string>> PegarFuncaoUsuario(Usuario usuario);
+
+        Task<IdentityResult> RemoverFuncaoUsuario(Usuario usuario, IEnumerable<string> funcoes);
+      
+        Task<IdentityResult> IncluirFuncaoUsuario(Usuario usuario, IEnumerable<string>funcoes);
     }
 }
