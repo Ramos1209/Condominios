@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using GerenciadorCondominios.BLL.Models;
+﻿using GerenciadorCondominios.BLL.Models;
 using GerenciadorCondominios.DAL.Interfaces;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 
 namespace GerenciadorCondominios.DAL.Repository
@@ -107,6 +107,19 @@ namespace GerenciadorCondominios.DAL.Repository
         public async Task<IdentityResult> IncluirFuncaoUsuario(Usuario usuario, IEnumerable<string> funcoes)
         {
             return await _userManager.AddToRolesAsync(usuario, funcoes);
+        }
+
+        public async Task<Usuario> TakeUserByName(ClaimsPrincipal usuario)
+        {
+            try
+            {
+                return await _userManager.FindByNameAsync(usuario.Identity.Name);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw;
+            }
         }
     }
 }

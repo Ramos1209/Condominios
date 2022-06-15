@@ -17,8 +17,8 @@
             {
                 <label>
                     <input type="checkbox" asp-for="@Model[i].isSelecioanda"/>
-                    <span asp-for="@Model[i].isSelecioanda">@Model[i].Nome  -  @Model[i].descricao</span>
-                    <input type="hidden" asp-for="@Model[i].funcaoId"/>
+                    <span asp-for="@Model[i].isSelecioanda">@Model[i].Nome - @Model[i].Descricao</span>
+                    <input type="hidden" asp-for="@Model[i].FuncaoId"/>
                     <input type="hidden" asp-for="@Model[i].Nome"/>
                 </label>
                 <br/>
@@ -27,7 +27,6 @@
                 <input type="submit" value="Atualizar" class="btn-small blue darken-3"/>&nbsp;
                 <a asp-controller="Usuarios"  asp-action="Index">Voltar</a>
             </div>
-
         </div>
     </div>
 </form>

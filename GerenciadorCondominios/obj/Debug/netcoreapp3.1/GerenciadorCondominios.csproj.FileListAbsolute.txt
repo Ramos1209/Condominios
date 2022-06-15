@@ -165,3 +165,4 @@ D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Reprovado.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\Index.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\GerenciarUsuario.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Usuarios\MinhasInformacoes.cshtml.g.cs

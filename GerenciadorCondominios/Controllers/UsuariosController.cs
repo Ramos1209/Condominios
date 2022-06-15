@@ -215,9 +215,9 @@ namespace GerenciadorCondominios.Controllers
             {
                 FuncaoUsuarioViewModel model = new FuncaoUsuarioViewModel
                 {
-                    funcaoId = funcao.Id,
+                    FuncaoId = funcao.Id,
                     Nome = funcao.Name,
-                    descricao = funcao.Descricao
+                    Descricao = funcao.Descricao
                 };
 
                 if (await _usuarioRepository.VerificaSeUsuarioExisteEmFuncao(usuario, funcao.Name))
@@ -227,16 +227,14 @@ namespace GerenciadorCondominios.Controllers
                 else
                 
                     model.isSelecioanda = false;
-
-
                 viewModels.Add(model);
-                
 
             }
 
             return View(viewModels);
         }
 
+        [HttpPost]
         public async Task<IActionResult> GerenciarUsuario(IEnumerable<FuncaoUsuarioViewModel> models)
         {
             string usuarioId = TempData["usuarioId"].ToString();
@@ -255,7 +253,7 @@ namespace GerenciadorCondominios.Controllers
             }
 
             resultado = await _usuarioRepository.IncluirFuncaoUsuario(usuario,
-                models.Where(x => x.isSelecioanda = true).Select(x => x.Nome));
+                models.Where(x => x.isSelecioanda == true).Select(x => x.Nome));
             if (!resultado.Succeeded)
             {
                 ModelState.AddModelError("", "Não foi possivel atualizar as funções do usuario");
@@ -264,6 +262,12 @@ namespace GerenciadorCondominios.Controllers
 
 
             return RedirectToAction(nameof(Index));
+        }
+
+
+        public async Task<IActionResult> MinhasInformacoes()
+        {
+            return View(await _usuarioRepository.TakeUserByName(User));
         }
 
     }

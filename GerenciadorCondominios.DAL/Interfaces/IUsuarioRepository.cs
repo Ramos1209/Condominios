@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using GerenciadorCondominios.BLL.Models;
 using Microsoft.AspNetCore.Identity;
@@ -25,5 +26,6 @@ namespace GerenciadorCondominios.DAL.Interfaces
         Task<IdentityResult> RemoverFuncaoUsuario(Usuario usuario, IEnumerable<string> funcoes);
       
         Task<IdentityResult> IncluirFuncaoUsuario(Usuario usuario, IEnumerable<string>funcoes);
+        Task<Usuario> TakeUserByName(ClaimsPrincipal usuario);
     }
 }
