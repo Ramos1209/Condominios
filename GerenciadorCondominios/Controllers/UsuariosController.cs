@@ -267,7 +267,9 @@ namespace GerenciadorCondominios.Controllers
 
         public async Task<IActionResult> MinhasInformacoes()
         {
-            return View(await _usuarioRepository.TakeUserByName(User));
+            if (User.Identity.IsAuthenticated)
+                return View(await _usuarioRepository.TakeUserByName(User));
+            return RedirectToAction("Login");
         }
 
     }

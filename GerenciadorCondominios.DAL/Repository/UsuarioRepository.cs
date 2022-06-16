@@ -1,11 +1,13 @@
-﻿using GerenciadorCondominios.BLL.Models;
-using GerenciadorCondominios.DAL.Interfaces;
-using Microsoft.AspNetCore.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using GerenciadorCondominios.BLL.Models;
+using GerenciadorCondominios.DAL.Interfaces;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace GerenciadorCondominios.DAL.Repository
@@ -73,6 +75,7 @@ namespace GerenciadorCondominios.DAL.Repository
                 throw;
             }
         }
+
 
         public async Task<Usuario> PegarEmailUsuario(string email)
         {
