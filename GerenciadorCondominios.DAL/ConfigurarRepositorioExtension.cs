@@ -10,6 +10,7 @@ namespace GerenciadorCondominios.DAL
         {
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IFuncaoRepository, FuncaoRepository>();
+            services.AddTransient<IVeiculoRepository, VeiculoRepository>();
         }
     }
 }

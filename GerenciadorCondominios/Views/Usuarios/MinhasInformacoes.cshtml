@@ -2,8 +2,8 @@
 @{
     ViewData["Title"] = "MinhasInformacoes";
 }
-@*
-@<partial name="_Configuracoes"/> *@
+
+<partial name="_Confirmacoes"/> 
 
 
 <div class="card horizontal">
@@ -36,7 +36,7 @@
     </div>
 </div>
 <div>
-    @*    @await Component.InvokeAsync("Veiculos",Model.Id)*@
+    @await Component.InvokeAsync("Veiculo",Model.Id)
 </div>
 
 <div>

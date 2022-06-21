@@ -9,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Threading.Tasks;
 
 namespace GerenciadorCondominios.Controllers
@@ -264,7 +265,7 @@ namespace GerenciadorCondominios.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
+        [HttpGet]
         public async Task<IActionResult> MinhasInformacoes()
         {
             if (User.Identity.IsAuthenticated)
@@ -272,5 +273,103 @@ namespace GerenciadorCondominios.Controllers
             return RedirectToAction("Login");
         }
 
+
+        [HttpGet]
+        public async Task<IActionResult> Atualizar(string id)
+        {
+            Usuario usuario = await _usuarioRepository.GetbyId(id);
+
+            if (usuario == null)
+                return NotFound();
+
+            AtualizaUsuarioViewModel model = new AtualizaUsuarioViewModel
+            {
+                UsuarioId = usuario.Id,
+                Nome = usuario.UserName,
+                Cpf = usuario.Cpf,
+                Email = usuario.Email,
+                Telefone = usuario.PhoneNumber,
+                Foto = usuario.Foto
+            };
+
+            TempData["Foto"] = usuario.Foto;
+
+
+            return View(model);
+        }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Atualizar(AtualizaUsuarioViewModel viewModel, IFormFile foto)
+        {
+            if (ModelState.IsValid)
+            {
+                if (foto != null)
+                {
+                    string diretorioPasta = Path.Combine(_webHostEnvironment.WebRootPath, "Imagens");
+                    string nomeFoto = Guid.NewGuid().ToString() + foto.FileName;
+
+                    using (FileStream fileStream =
+                           new FileStream(Path.Combine(diretorioPasta, nomeFoto), FileMode.Create))
+                    {
+                        await foto.CopyToAsync(fileStream);
+                        viewModel.Foto = "~/Imagens/" + nomeFoto;
+                    }
+                }
+                else
+                    viewModel.Foto = TempData["Foto"].ToString();
+
+                Usuario usuario = await _usuarioRepository.GetbyId(viewModel.UsuarioId);
+
+                usuario.UserName = viewModel.Nome;
+                usuario.Email = viewModel.Email;
+                usuario.Cpf = viewModel.Cpf;
+                usuario.PhoneNumber = viewModel.Telefone;
+                usuario.Foto = viewModel.Foto;
+
+                await _usuarioRepository.AtualizarUsuario(usuario);
+
+                TempData["Atualizacao"] = "Registro atualizado";
+
+                if (await _usuarioRepository.VerificaSeUsuarioExisteEmFuncao(usuario, "Administrador") ||
+                    await _usuarioRepository.VerificaSeUsuarioExisteEmFuncao(usuario, "Sindico"))
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                    return RedirectToAction("MinhasInformacoes");
+            }
+
+            return View(viewModel);
+
+        }
+
+
+        [HttpGet]
+        public IActionResult RedefinirSenha(Usuario usuario)
+        {
+            LoginViewModel model = new LoginViewModel
+            {
+                Email = usuario.Email
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> RedefinirSenha(LoginViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                Usuario usuario = await _usuarioRepository.PegarEmailUsuario(model.Email);
+                model.Senha = _usuarioRepository.CodificarSenha(usuario, model.Senha);
+                usuario.PasswordHash = model.Senha;
+                usuario.PromeiroAcesso = false;
+                await _usuarioRepository.AtualizarUsuario(usuario);
+                await _usuarioRepository.LogarUsuario(usuario, false);
+                return RedirectToAction(nameof(MinhasInformacoes));
+            }
+            return View(model);
+        }
     }
 }

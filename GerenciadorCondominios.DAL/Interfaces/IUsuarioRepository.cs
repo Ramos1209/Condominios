@@ -11,21 +11,16 @@ namespace GerenciadorCondominios.DAL.Interfaces
         int VerificaSeExistRegistro();
         Task LogarUsuario(Usuario usuario, bool lembrar);
         Task<IdentityResult> CriarUsuario(Usuario usuario, string senha);
-
         Task IncluirUsuarioFuncao(Usuario usuario, string funcao);
-
         Task<Usuario> PegarEmailUsuario(string email);
-
         Task DeslogarUser();
         Task AtualizarUsuario(Usuario usuario);
-
         Task<bool> VerificaSeUsuarioExisteEmFuncao(Usuario usuario, string funcao);
-
         Task<IEnumerable<string>> PegarFuncaoUsuario(Usuario usuario);
-
         Task<IdentityResult> RemoverFuncaoUsuario(Usuario usuario, IEnumerable<string> funcoes);
-      
         Task<IdentityResult> IncluirFuncaoUsuario(Usuario usuario, IEnumerable<string>funcoes);
         Task<Usuario> TakeUserByName(ClaimsPrincipal usuario);
+
+        string CodificarSenha(Usuario usuario, string senha);
     }
 }
