@@ -25,11 +25,8 @@ namespace GerenciadorCondominios
         {
             services.AddDbContext<CondominioContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("Conection")));
 
-            services.AddIdentity<Usuario, Funcao>().AddEntityFrameworkStores<CondominioContext>();
-           
-
             services.AddAuthentication();
-            services.AddAuthorization();
+           // services.AddAuthorization();
 
             services.ConfigurarRepositorio();
             services.ConfigurarCookie();
@@ -58,7 +55,7 @@ namespace GerenciadorCondominios
             app.UseRouting();
             app.UseAuthentication();
 
-            app.UseAuthorization();
+           // app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

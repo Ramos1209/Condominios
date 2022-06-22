@@ -1,11 +1,7 @@
-﻿using System;
-using System.Threading.Tasks;
-using GerenciadorCondominios.BLL.Models;
-using GerenciadorCondominios.DAL;
+﻿using GerenciadorCondominios.BLL.Models;
 using GerenciadorCondominios.DAL.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Threading.Tasks;
 
 namespace GerenciadorCondominios.Controllers
 {
@@ -36,10 +32,10 @@ namespace GerenciadorCondominios.Controllers
         {
             try
             {
-                Usuario usuario = await _usuarioRepository.TakeUserByName(User);
+                Usuario usuario = await _usuarioRepository.PegarUSuarioPeloNome(User);
                 veiculo.UsuarioId = usuario.Id;
                 await _veiculoRepository.Insert(veiculo);
-                return RedirectToAction("MinhasInformacoes", "Usuarios");
+                return RedirectToAction("MinhasInformacao", "Usuarios");
             }
             catch
             {
@@ -74,7 +70,7 @@ namespace GerenciadorCondominios.Controllers
             if (ModelState.IsValid)
             {
                   await _veiculoRepository.Update(veiculo);
-                  return RedirectToAction("MinhasInformacoes", "Usuarios");
+                  return RedirectToAction("MinhasInformacao", "Usuarios");
                 
                 
             }

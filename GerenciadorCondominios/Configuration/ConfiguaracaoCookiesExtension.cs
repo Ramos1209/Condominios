@@ -7,12 +7,13 @@ namespace GerenciadorCondominios.Configuration
     {
         public static void ConfigurarCookie(this IServiceCollection services)
         {
-            services.ConfigureApplicationCookie(opt =>
+            services.ConfigureApplicationCookie(opcoes =>
             {
-                opt.Cookie.Name = "IdentityCookie";
-                opt.Cookie.HttpOnly = true;
-               // opt.Cookie.ExpireS = TimeSpan.FromMinutes(60);
-                opt.Cookie.Path = "/Usuarios/Login";
+                opcoes.Cookie.Name = "IdentityCookie";
+                opcoes.Cookie.HttpOnly = true;
+                opcoes.ExpireTimeSpan = TimeSpan.FromMinutes(60);
+                opcoes.LoginPath = "/Usuarios/Login";
+                opcoes.AccessDeniedPath = "/Usuarios/AcessoNegado";
             });
         }
     }

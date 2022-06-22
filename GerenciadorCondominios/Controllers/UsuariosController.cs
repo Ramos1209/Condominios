@@ -70,6 +70,7 @@ namespace GerenciadorCondominios.Controllers
                     usuario.Status = StatusConta.Aprovado;
 
                     usuarioCriado = await _usuarioRepository.CriarUsuario(usuario, model.Senha);
+                   
                     if (usuarioCriado.Succeeded)
                     {
                         await _usuarioRepository.IncluirUsuarioFuncao(usuario, "Administrador");
@@ -265,11 +266,11 @@ namespace GerenciadorCondominios.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        [HttpGet]
-        public async Task<IActionResult> MinhasInformacoes()
+        
+        public async Task<IActionResult> MinhasInformacao()
         {
             if (User.Identity.IsAuthenticated)
-                return View(await _usuarioRepository.TakeUserByName(User));
+                return View(await _usuarioRepository.PegarUSuarioPeloNome(User));
             return RedirectToAction("Login");
         }
 
@@ -338,7 +339,7 @@ namespace GerenciadorCondominios.Controllers
                     return RedirectToAction(nameof(Index));
                 }
                 else
-                    return RedirectToAction("MinhasInformacoes");
+                    return RedirectToAction("MinhasInformacao");
             }
 
             return View(viewModel);
@@ -367,7 +368,7 @@ namespace GerenciadorCondominios.Controllers
                 usuario.PromeiroAcesso = false;
                 await _usuarioRepository.AtualizarUsuario(usuario);
                 await _usuarioRepository.LogarUsuario(usuario, false);
-                return RedirectToAction(nameof(MinhasInformacoes));
+                return RedirectToAction(nameof(MinhasInformacao));
             }
             return View(model);
         }

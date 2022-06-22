@@ -112,11 +112,12 @@ namespace GerenciadorCondominios.DAL.Repository
             return await _userManager.AddToRolesAsync(usuario, funcoes);
         }
 
-        public async Task<Usuario> TakeUserByName(ClaimsPrincipal usuario)
+        public async Task<Usuario> PegarUSuarioPeloNome(ClaimsPrincipal usuario)
         {
             try
             {
-                return await _userManager.FindByNameAsync(usuario.Identity.Name);
+                var nome = await _userManager.FindByNameAsync(usuario.Identity.Name);
+                return nome;
             }
             catch (Exception ex)
             {
