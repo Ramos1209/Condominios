@@ -2,6 +2,7 @@
 using GerenciadorCondominios.DAL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using GerenciadorCondominios.ViewModels;
 
 namespace GerenciadorCondominios.Controllers
 {
@@ -9,11 +10,15 @@ namespace GerenciadorCondominios.Controllers
     {
         private readonly IServicoRepository _servicoRepository;
         private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IHistoricoRecursoRepository _historicoRecursoRepository;
+        private readonly IServicoPredioRepository _predioRepository;
 
-        public ServicoController(IServicoRepository servicoRepository, IUsuarioRepository usuarioRepository)
+        public ServicoController(IServicoRepository servicoRepository, IUsuarioRepository usuarioRepository, IHistoricoRecursoRepository historicoRecursoRepository, IServicoPredioRepository predioRepository)
         {
             _servicoRepository = servicoRepository;
             _usuarioRepository = usuarioRepository;
+            _historicoRecursoRepository = historicoRecursoRepository;
+            _predioRepository = predioRepository;
         }
 
 
@@ -27,8 +32,7 @@ namespace GerenciadorCondominios.Controllers
             return View(await _servicoRepository.GetAll());
         }
 
-
-        // GET: ServicoController/Create
+       [HttpGet]
         public async Task<IActionResult> Create()
         {
             Usuario usuario = await _usuarioRepository.PegarUSuarioPeloNome(User);
@@ -38,7 +42,6 @@ namespace GerenciadorCondominios.Controllers
             };
             return View(servico);
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -66,7 +69,7 @@ namespace GerenciadorCondominios.Controllers
             return View(servico);
         }
 
-        // POST: ServicoController/Edit/5
+     
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, Servico servico)
@@ -76,25 +79,81 @@ namespace GerenciadorCondominios.Controllers
             {
                 return NotFound();
             }
-
             if (ModelState.IsValid)
             {
                 await _servicoRepository.Update(servico);
                 TempData["Atualizado"] = $"Servico {servico.Nome} atualizado";
                 return RedirectToAction(nameof(Index));
             }
-
             return View();
-
         }
     
         [HttpPost]
-      
         public async Task<JsonResult> Delete(int id)
         {
             await _servicoRepository.Excluir(id);
             TempData["Exclusao"] = $"Servico  excluido";
             return Json("Servico excluido");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> AprovarServico(int id)
+        {
+            Servico servico = await _servicoRepository.GetbyId(id);
+            ServicoAprovadoViewModel model = new ServicoAprovadoViewModel
+            {
+                ServicoId = servico.ServicoId,
+                Nome = servico.Nome
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> AprovarServico(ServicoAprovadoViewModel viewModel)
+        {
+            if (ModelState.IsValid)
+            {
+                Servico servico = await _servicoRepository.GetbyId(viewModel.ServicoId);
+                servico.Status = StatuServico.Aceito;
+                await _servicoRepository.Update(servico);
+
+                ServicoPredio predio = new ServicoPredio
+                {
+                    ServicoId = viewModel.ServicoId,
+                    DataExecusao = viewModel.Data
+                };
+
+                await _predioRepository.Insert(predio);
+
+                HistoricoRecurso hr = new HistoricoRecurso
+                {
+                    Valor = servico.Valor,
+                    MesId = predio.DataExecusao.Month,
+                    Dia = predio.DataExecusao.Day,
+                    Ano = predio.DataExecusao.Year,
+                    Tipo = Tipos.Saida
+                };
+                await _historicoRecursoRepository.Insert(hr);
+                TempData["NovoRegistro"] = $"Serviço {servico.Nome} escalado com sucesso";
+
+                return RedirectToAction(nameof(Index));
+            }
+
+            return View(viewModel);
+        }
+
+        public async Task<IActionResult> RecusarServico(int id)
+        {
+            Servico servico = await _servicoRepository.GetbyId(id);
+            if (servico == null)
+                return NotFound();
+
+            servico.Status = StatuServico.Resusado;
+            await _servicoRepository.Update(servico);
+
+            TempData["Exclusao"] = $"{servico.Nome} recusado";
+            return RedirectToAction(nameof(Index));
         }
     }
 }
