@@ -144,8 +144,15 @@ D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\GerenciadorCondominios.TagHelpers.input.cache
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\GerenciadorCondominios.TagHelpers.output.cache
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\GerenciadorCondominios.RazorCoreGenerate.cache
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Eventos\Create.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Eventos\Edit.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Eventos\Index.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Servico\AprovarServico.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Servico\Create.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Servico\Edit.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Servico\Index.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Veiculos\Default.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Confirmacoes.cshtml.g.cs
@@ -173,10 +180,3 @@ D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\GerenciadorCondominios.dll
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\GerenciadorCondominios.pdb
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\GerenciadorCondominios.genruntimeconfig.cache
-D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Eventos\Index.cshtml.g.cs
-D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Eventos\Create.cshtml.g.cs
-D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Eventos\Edit.cshtml.g.cs
-D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Servico\Index.cshtml.g.cs
-D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Servico\Create.cshtml.g.cs
-D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Servico\Edit.cshtml.g.cs
-D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Servico\AprovarServico.cshtml.g.cs
