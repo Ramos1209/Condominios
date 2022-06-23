@@ -9,8 +9,6 @@ namespace GerenciadorCondominios.DAL
     {
         public static void ConfigurarRepositorio(this IServiceCollection services)
         {
-         
-
 
             services.AddIdentity<Usuario, Funcao>().AddEntityFrameworkStores<CondominioContext>();
 
@@ -18,6 +16,7 @@ namespace GerenciadorCondominios.DAL
             services.AddTransient<IFuncaoRepository, FuncaoRepository>();
             services.AddTransient<IVeiculoRepository, VeiculoRepository>();
             services.AddTransient<IEventoRepository, EventoRepository>();
+            services.AddTransient<IServicoRepository, ServicoRepository>();
         }
     }
 }

@@ -4,7 +4,7 @@
     });
     $('#modal').modal('open');
     $(".nome").text(nome);
-    var url = "/" + controller + "/Delete"
+    var url = "/" + controller + "/Delete";
 
     $(".btnExcluir").on('click',
         function() {
