@@ -23,6 +23,13 @@
 			<div class="nav-wrapper navbar-fixed">
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li class="nav-item">
+						<a class="nav-link" asp-controller="Funcoes" asp-action="Index">Funções</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" asp-controller="Apartamentos" asp-action="Index">Apartamentos</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" asp-controller="Servico" asp-action="Index">Serviços</a>
 					</li>
 					<li class="nav-item">
@@ -51,14 +58,14 @@
 	</div>
 	<environment include="Development">
 		<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
-        <script src="~/js/InicializarTooltip.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+		<script src="~/js/InicializarTooltip.js"></script>
 		<script src="~/js/site.js" asp-append-version="true"></script>
 		@RenderSection("Scripts", required: false)
 	</environment>
 	<environment exclude="Development">
 		<script src="https://code.jquery.com/jquery-3.6.0.mim.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.mim.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.mim.js"></script>
 		<script src="~/js/InicializarTooltip.js"></script>
 		<script src="~/js/site.js" asp-append-version="true"></script>
 		@RenderSection("Scripts", required: false)

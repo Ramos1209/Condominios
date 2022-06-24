@@ -99,7 +99,7 @@ namespace GerenciadorCondominios.Controllers
         public async Task<JsonResult> Delete(int id)
         {
             await _eventoRepository.Excluir(id);
-            TempData["Excluir"]=$"Evento excluido";
+            TempData["Exclusao"] =$"Evento excluido";
             return Json("Evento excluido");
         }
     }
