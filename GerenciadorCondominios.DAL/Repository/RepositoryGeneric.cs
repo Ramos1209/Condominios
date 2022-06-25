@@ -32,6 +32,12 @@ namespace GerenciadorCondominios.DAL.Repository
             }
         }
 
+        public async Task Insert(List<TEntity> entity)
+        {
+            await _context.AddRangeAsync(entity);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task Update(TEntity entity)
         {
             try

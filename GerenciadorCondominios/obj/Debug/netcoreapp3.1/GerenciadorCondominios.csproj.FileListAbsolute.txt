@@ -186,3 +186,6 @@ D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Funcoes\Index.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Funcoes\Create.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Funcoes\Edit.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Alugueis\Index.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Alugueis\Create.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Alugueis\Edit.cshtml.g.cs

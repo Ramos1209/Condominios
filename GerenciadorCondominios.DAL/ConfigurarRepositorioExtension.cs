@@ -20,6 +20,9 @@ namespace GerenciadorCondominios.DAL
             services.AddTransient<IServicoPredioRepository, ServicoPredioRepository>();
             services.AddTransient<IHistoricoRecursoRepository, HistoricoRecursoRepository>();
             services.AddTransient<IApartamentoRepository, ApartamentoRepository>();
+            services.AddTransient<IAluguelRepository, AluguelRepository>();
+            services.AddTransient<IMesRepository, MesRepository>();
+            services.AddTransient<IPagamentoRepository, PagamentoRepository>();
         }
     }
 }

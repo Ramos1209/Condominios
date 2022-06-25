@@ -12,7 +12,8 @@ namespace GerenciadorCondominios.DAL.Interfaces
        Task<Tentity> GetbyId(string id);
 
        Task Insert(Tentity entity);
-       Task Update(Tentity entity);
+       Task Insert(List<Tentity> entity);
+        Task Update(Tentity entity);
        Task Excluir(Tentity entity);
        Task Excluir(int id);
        Task Excluir(string id);
