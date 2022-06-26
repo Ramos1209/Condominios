@@ -16,7 +16,7 @@ namespace GerenciadorCondominios.DAL.Interfaces
         Task DeslogarUser();
         Task AtualizarUsuario(Usuario usuario);
         Task<bool> VerificaSeUsuarioExisteEmFuncao(Usuario usuario, string funcao);
-        Task<IEnumerable<string>> PegarFuncaoUsuario(Usuario usuario);
+        Task<IList<string>> PegarFuncaoUsuario(Usuario usuario);
         Task<IdentityResult> RemoverFuncaoUsuario(Usuario usuario, IEnumerable<string> funcoes);
         Task<IdentityResult> IncluirFuncaoUsuario(Usuario usuario, IEnumerable<string>funcoes);
         Task<Usuario> PegarUSuarioPeloNome(ClaimsPrincipal usuario);

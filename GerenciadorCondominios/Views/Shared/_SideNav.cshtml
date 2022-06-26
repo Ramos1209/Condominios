@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using GerenciadorCondominios.BLL.Models;
+@using GerenciadorCondominios.DAL.Interfaces;
+
+@inject SignInManager<Usuario> _signInManager;
+@inject UserManager<Usuario> _userManager;
+@inject IUsuarioRepository _usuarioRepository;
+
+
+@{
+	Usuario usuario = await _usuarioRepository.PegarUSuarioPeloNome(User);
+}
+
+<ul id="slide-out" class="sidenav sidenav-fixed">
+	<li class="center-align">
+		<div class="user-view">
+			<div class="background purple darken-4">
+
+			</div>
+			<text><partial name="_BoasVindas"/></text>
+		</div>
+
+	</li>	
+	
+	@if (await _usuarioRepository.VerificaSeUsuarioExisteEmFuncao(usuario, "Administrador") || await _usuarioRepository.VerificaSeUsuarioExisteEmFuncao(usuario, "Sindico"))
+	{
+		<li class="nav-item"><a class="nav-link" asp-controller="Dashboard" asp-action="Index"><i class="material-icons">insert_chart</i>Dashboard</a></li>
+		<li class="nav-item"><a class="nav-link" asp-controller="Usuarios" asp-action="Index"><i class="material-icons">account-box</i>Usuarios</a></li>
+		<li class="nav-item"><a class="nav-link" asp-controller="Apartamentos" asp-action="Index"><i class="material-icons">store</i>Apartamentos</a></li>
+		<li class="nav-item">
+			<a class="nav-link" asp-controller="Alugueis" asp-action="Index"><i class="material-icons">attach_money</i>Alugueis</a>
+		</li>
+	}
+	else if(await _usuarioRepository.VerificaSeUsuarioExisteEmFuncao(usuario, "Administrador"))
+	{
+	<li class="nav-item"><a class="nav-link" asp-controller="Funcoes" asp-action="Index"><i class="material-icons">group</i>Funções</a></li>
+	}
+	
+	<li class="nav-item"><a class="nav-link" asp-controller="Pagamentos" asp-action="Index"><i class="material-icons">monetization_on</i>pagamentos</a></li>
+				
+				
+	<li class="nav-item"><a class="nav-link" asp-controller="Servico" asp-action="Index"><i class="material-icons">list</i>Serviços</a>
+	</li>
+	<li class="nav-item"><a class="nav-link" asp-controller="Eventos" asp-action="Index"><i class="material-icons">settings</i>Eventos</a>
+	</li>
+	
+
+</ul>

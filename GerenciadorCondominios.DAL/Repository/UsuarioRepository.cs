@@ -97,7 +97,7 @@ namespace GerenciadorCondominios.DAL.Repository
             return await _userManager.IsInRoleAsync(usuario, funcao);
         }
 
-        public  async Task<IEnumerable<string>> PegarFuncaoUsuario(Usuario usuario)
+        public  async Task<IList<string>> PegarFuncaoUsuario(Usuario usuario)
         {
             return await _userManager.GetRolesAsync(usuario);
         }
