@@ -193,3 +193,7 @@ D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Nav.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SideNav.cshtml.g.cs
 D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BoasVindas.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\DashBoard\Index.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\DashBoard\_GraficosValoresGanhosDespesas.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\DashBoard\_GraficoDespesasGanhosTotais.cshtml.g.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\UltimasMovimentacoes\Default.cshtml.g.cs

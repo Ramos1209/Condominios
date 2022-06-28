@@ -44,7 +44,7 @@ namespace GerenciadorCondominios.Controllers
             {
                 Valor = aluguel.Valor,
                 MesId = aluguel.MesId,
-                Ano = DateTime.Now.Year,
+                Ano = aluguel.Ano,
                 Dia = DateTime.Now.Day,
                 Tipo = Tipos.Entrada
             };

@@ -14,7 +14,7 @@
 <ul id="slide-out" class="sidenav sidenav-fixed">
 	<li class="center-align">
 		<div class="user-view">
-			<div class="background purple darken-4">
+			<div class="background purple darken-2">
 
 			</div>
 			<text><partial name="_BoasVindas"/></text>
@@ -24,8 +24,8 @@
 	
 	@if (await _usuarioRepository.VerificaSeUsuarioExisteEmFuncao(usuario, "Administrador") || await _usuarioRepository.VerificaSeUsuarioExisteEmFuncao(usuario, "Sindico"))
 	{
-		<li class="nav-item"><a class="nav-link" asp-controller="Dashboard" asp-action="Index"><i class="material-icons">insert_chart</i>Dashboard</a></li>
-		<li class="nav-item"><a class="nav-link" asp-controller="Usuarios" asp-action="Index"><i class="material-icons">account-box</i>Usuarios</a></li>
+		<li class="nav-item"><a class="nav-link" asp-controller="DashBoard" asp-action="Index"><i class="material-icons">insert_chart</i>Dashboard</a></li>
+		<li class="nav-item"><a class="nav-link" asp-controller="Usuarios" asp-action="Index"><i class="material-icons">account_box</i>Usuarios</a></li>
 		<li class="nav-item"><a class="nav-link" asp-controller="Apartamentos" asp-action="Index"><i class="material-icons">store</i>Apartamentos</a></li>
 		<li class="nav-item">
 			<a class="nav-link" asp-controller="Alugueis" asp-action="Index"><i class="material-icons">attach_money</i>Alugueis</a>
