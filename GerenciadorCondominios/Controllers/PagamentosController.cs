@@ -1,14 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using GerenciadorCondominios.BLL.Models;
+using GerenciadorCondominios.DAL.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
-using GerenciadorCondominios.BLL.Models;
-using GerenciadorCondominios.DAL.Interfaces;
 
 namespace GerenciadorCondominios.Controllers
 {
+    [Authorize]
     public class PagamentosController : Controller
     {
         private readonly IPagamentoRepository _pagamentoRepository;

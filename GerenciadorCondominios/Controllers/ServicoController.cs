@@ -3,9 +3,11 @@ using GerenciadorCondominios.DAL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using GerenciadorCondominios.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GerenciadorCondominios.Controllers
 {
+    [Authorize]
     public class ServicoController : Controller
     {
         private readonly IServicoRepository _servicoRepository;
@@ -96,6 +98,7 @@ namespace GerenciadorCondominios.Controllers
             return Json("Servico excluido");
         }
 
+        [Authorize(Roles = "Administrador, Sindico")]
         [HttpGet]
         public async Task<IActionResult> AprovarServico(int id)
         {
@@ -107,7 +110,7 @@ namespace GerenciadorCondominios.Controllers
             };
             return View(model);
         }
-
+        [Authorize(Roles = "Administrador, Sindico")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> AprovarServico(ServicoAprovadoViewModel viewModel)
@@ -142,7 +145,7 @@ namespace GerenciadorCondominios.Controllers
 
             return View(viewModel);
         }
-
+        [Authorize(Roles = "Administrador, Sindico")]
         public async Task<IActionResult> RecusarServico(int id)
         {
             Servico servico = await _servicoRepository.GetbyId(id);

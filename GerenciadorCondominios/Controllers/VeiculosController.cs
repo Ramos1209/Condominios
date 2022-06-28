@@ -2,9 +2,11 @@
 using GerenciadorCondominios.DAL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GerenciadorCondominios.Controllers
-{
+{  
+    [Authorize]
     public class VeiculosController : Controller
     {
         private readonly IVeiculoRepository _veiculoRepository;

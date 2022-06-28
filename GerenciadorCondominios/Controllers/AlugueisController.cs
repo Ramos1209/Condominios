@@ -5,10 +5,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using GerenciadorCondominios.BLL.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace GerenciadorCondominios.Controllers
 {
+
+    [Authorize(Roles = "Administrador, Sindico")]
     public class AlugueisController : Controller
     {
         private readonly IAluguelRepository _aluguelRepository;
@@ -24,6 +27,7 @@ namespace GerenciadorCondominios.Controllers
             _mesRepository = mesRepository;
         }
 
+        [Authorize(Roles="Morador")]
         public async Task<IActionResult> Index()
         {
             return View(await _aluguelRepository.PegarTodosAl());

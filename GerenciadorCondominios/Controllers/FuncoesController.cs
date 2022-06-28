@@ -2,9 +2,11 @@
 using GerenciadorCondominios.DAL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GerenciadorCondominios.Controllers
 {
+    [Authorize(Roles = "Administrador")]
     public class FuncoesController : Controller
     {
         private readonly IFuncaoRepository _funcaoRepository;

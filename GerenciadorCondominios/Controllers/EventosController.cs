@@ -2,11 +2,12 @@
 using GerenciadorCondominios.DAL.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace GerenciadorCondominios.Controllers
 {
 
-
+    [Authorize]
     public class EventosController : Controller
     {
         private readonly IEventoRepository _eventoRepository;
