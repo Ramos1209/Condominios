@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorCondominios", "GerenciadorCondominios\GerenciadorCondominios.csproj", "{1C196449-B1BF-4AEA-AAA9-B04D6A1006DA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciadorCondominios", "GerenciadorCondominios\GerenciadorCondominios.csproj", "{1C196449-B1BF-4AEA-AAA9-B04D6A1006DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorCondominios.BLL", "GerenciadorCondominios.BLL\GerenciadorCondominios.BLL.csproj", "{3FDE73B9-D8FE-4EBA-A493-E23D4183B99A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciadorCondominios.BLL", "GerenciadorCondominios.BLL\GerenciadorCondominios.BLL.csproj", "{3FDE73B9-D8FE-4EBA-A493-E23D4183B99A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GerenciadorCondominios.DAL", "GerenciadorCondominios.DAL\GerenciadorCondominios.DAL.csproj", "{2029C775-2615-4215-BFDE-FD0586C6F687}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GerenciadorCondominios.DAL", "GerenciadorCondominios.DAL\GerenciadorCondominios.DAL.csproj", "{2029C775-2615-4215-BFDE-FD0586C6F687}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComdominiosTest", "ComdominiosTest\ComdominiosTest.csproj", "{BA00616D-CD3D-4AE9-BA53-F40165D5726E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{2029C775-2615-4215-BFDE-FD0586C6F687}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2029C775-2615-4215-BFDE-FD0586C6F687}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2029C775-2615-4215-BFDE-FD0586C6F687}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA00616D-CD3D-4AE9-BA53-F40165D5726E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA00616D-CD3D-4AE9-BA53-F40165D5726E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA00616D-CD3D-4AE9-BA53-F40165D5726E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA00616D-CD3D-4AE9-BA53-F40165D5726E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

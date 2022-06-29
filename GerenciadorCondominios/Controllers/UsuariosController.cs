@@ -9,7 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
+
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 
@@ -189,6 +189,12 @@ namespace GerenciadorCondominios.Controllers
         {
             return View(nome);
         }
+        public IActionResult AcessoNegado()
+        {
+            return View();
+        }
+
+
         [Authorize(Roles = "Administrador, Sindico")]
         public async Task<JsonResult> AprovarUsuario(string usuarioId)
         {

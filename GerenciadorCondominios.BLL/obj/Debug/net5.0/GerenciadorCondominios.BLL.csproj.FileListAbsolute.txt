@@ -1,0 +1,12 @@
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\bin\Debug\net5.0\GerenciadorCondominios.BLL.deps.json
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\bin\Debug\net5.0\GerenciadorCondominios.BLL.dll
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\bin\Debug\net5.0\ref\GerenciadorCondominios.BLL.dll
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\bin\Debug\net5.0\GerenciadorCondominios.BLL.pdb
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\obj\Debug\net5.0\GerenciadorCondominios.BLL.csproj.AssemblyReference.cache
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\obj\Debug\net5.0\GerenciadorCondominios.BLL.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\obj\Debug\net5.0\GerenciadorCondominios.BLL.AssemblyInfoInputs.cache
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\obj\Debug\net5.0\GerenciadorCondominios.BLL.AssemblyInfo.cs
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\obj\Debug\net5.0\GerenciadorCondominios.BLL.csproj.CoreCompileInputs.cache
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\obj\Debug\net5.0\GerenciadorCondominios.BLL.dll
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\obj\Debug\net5.0\ref\GerenciadorCondominios.BLL.dll
+D:\Projetos\Pojetos MVC\GerenciadorCondominios\GerenciadorCondominios.BLL\obj\Debug\net5.0\GerenciadorCondominios.BLL.pdb
